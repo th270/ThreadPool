@@ -9,10 +9,13 @@ import java.util.concurrent.Executors;
  * 保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
  */
 public class NewSingleThreadExecutor {
+
     public static void main(String[] args) {
 
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+
         for (int i = 0; i < 10; i++) {
+
             final int index = i;
             /*singleThreadExecutor.execute(new Runnable() {
                 @Override
@@ -30,6 +33,7 @@ public class NewSingleThreadExecutor {
             singleThreadExecutor.submit(new Runnable() {
                 @Override
                 public void run() {
+
                     try {
                         System.out.println("newSingleThreadExecutor: " + index);
                         Thread.sleep(2*1000);
@@ -37,7 +41,9 @@ public class NewSingleThreadExecutor {
                     	e.printStackTrace();
                     }
                 }
+
             });
+
         }
 
         singleThreadExecutor.shutdown();

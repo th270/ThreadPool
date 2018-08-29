@@ -9,8 +9,11 @@ import java.util.concurrent.Executors;
  * 若无可回收，则新建线程。线程池的规模不存在限制。
  */
 public class NewCachedThreadPool {
+
     public static void main(String[] args) {
+
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+
         for (int i = 0; i < 10; i++) {
             final int index = i;
             try {
@@ -36,7 +39,9 @@ public class NewCachedThreadPool {
                     System.out.println(index);
                 }
             });
+
         }
+
         cachedThreadPool.shutdown();
     }
 }

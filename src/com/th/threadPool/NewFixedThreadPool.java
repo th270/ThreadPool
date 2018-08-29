@@ -9,7 +9,9 @@ import java.util.concurrent.Executors;
  * newFixedThreadPool 创建一个固定长度线程池，可控制线程最大并发数，超出的线程会在队列中等待。
  */
 public class NewFixedThreadPool {
+
     public static void main(String[] args) {
+
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(2);
         for (int i = 0; i < 10; i++)
         {
@@ -34,6 +36,7 @@ public class NewFixedThreadPool {
             });
         }
         fixedThreadPool.shutdown();
+
     }
 
     /**
