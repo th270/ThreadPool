@@ -35,10 +35,14 @@ public class NewSingleThreadExecutor {
                 public void run() {
 
                     try {
+
                         System.out.println("newSingleThreadExecutor: " + index);
                         Thread.sleep(2*1000);
+
                     } catch (Exception e) {
+
                     	e.printStackTrace();
+
                     }
                 }
 
